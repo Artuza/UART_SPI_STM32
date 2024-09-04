@@ -1,0 +1,10 @@
+21:56:37 **** Incremental Build of configuration Debug for project SLAVE_SLAVE ****
+make -j12 all 
+arm-none-eabi-size  SLAVE_SLAVE.elf 
+   text	   data	    bss	    dec	    hex	filename
+  21040	     92	   2324	  23456	   5ba0	SLAVE_SLAVE.elf
+Finished building: default.size.stdout
+ 
+
+21:56:37 Build Finished. 0 errors, 0 warnings. (took 558ms)
+

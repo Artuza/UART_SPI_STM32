@@ -1,0 +1,10 @@
+20:35:13 **** Incremental Build of configuration Debug for project MATLAB ****
+make -j12 all 
+arm-none-eabi-size  MATLAB.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1196	      4	   1772	   2972	    b9c	MATLAB.elf
+Finished building: default.size.stdout
+ 
+
+20:35:13 Build Finished. 0 errors, 0 warnings. (took 475ms)
+

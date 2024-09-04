@@ -1,0 +1,53 @@
+20:35:05 **** Incremental Build of configuration Debug for project MATLAB ****
+make -j12 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f3xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F303xE -c -I../Core/Inc -I../Drivers/STM32F3xx_HAL_Driver/Inc/Legacy -I../Drivers/STM32F3xx_HAL_Driver/Inc -I../Drivers/CMSIS/Device/ST/STM32F3xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32f3xx_it.d" -MT"Core/Src/stm32f3xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f3xx_it.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:94:9: warning: implicit declaration of function 'UART_TransmitData'; did you mean 'HAL_UART_Transmit_DMA'? [-Wimplicit-function-declaration]
+   94 |         UART_TransmitData(dataToSend, sizeof(dataToSend));
+      |         ^~~~~~~~~~~~~~~~~
+      |         HAL_UART_Transmit_DMA
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:101:6: warning: conflicting types for 'UART_TransmitData'; have 'void(uint8_t *, uint16_t)' {aka 'void(unsigned char *, short unsigned int)'}
+  101 | void UART_TransmitData(uint8_t *data, uint16_t length) {
+      |      ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c:94:9: note: previous implicit declaration of 'UART_TransmitData' with type 'void(uint8_t *, uint16_t)' {aka 'void(unsigned char *, short unsigned int)'}
+   94 |         UART_TransmitData(dataToSend, sizeof(dataToSend));
+      |         ^~~~~~~~~~~~~~~~~
+../Core/Src/main.c: In function 'UART_TransmitData':
+../Core/Src/main.c:104:3: warning: implicit declaration of function 'memcpy' [-Wimplicit-function-declaration]
+  104 |   memcpy(txBuffer, data, length);
+      |   ^~~~~~
+../Core/Src/main.c:21:1: note: include '<string.h>' or provide a declaration of 'memcpy'
+   20 | #include "main.h"
+  +++ |+#include <string.h>
+   21 | 
+../Core/Src/main.c:104:3: warning: incompatible implicit declaration of built-in function 'memcpy' [-Wbuiltin-declaration-mismatch]
+  104 |   memcpy(txBuffer, data, length);
+      |   ^~~~~~
+../Core/Src/main.c:104:3: note: include '<string.h>' or provide a declaration of 'memcpy'
+../Core/Src/main.c: At top level:
+../Core/Src/main.c:218:13: warning: 'MX_GPIO_Init' defined but not used [-Wunused-function]
+  218 | static void MX_GPIO_Init(void)
+      |             ^~~~~~~~~~~~
+../Core/Src/main.c:181:13: warning: 'MX_USART2_UART_Init' defined but not used [-Wunused-function]
+  181 | static void MX_USART2_UART_Init(void)
+      |             ^~~~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "MATLAB.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\artur\STM32CubeIDE\workspace_1.16.0\TAREA_GONZALO\AHORAYA\MATLAB\STM32F303RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MATLAB.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: MATLAB.elf
+ 
+arm-none-eabi-size  MATLAB.elf 
+arm-none-eabi-objdump -h -S MATLAB.elf  > "MATLAB.list"
+   text	   data	    bss	    dec	    hex	filename
+   1196	      4	   1772	   2972	    b9c	MATLAB.elf
+Finished building: default.size.stdout
+ 
+Finished building: MATLAB.list
+ 
+20:35:13 **** Incremental Build of configuration Debug for project MATLAB ****
+make -j12 all 
+arm-none-eabi-size  MATLAB.elf 
+   text	   data	    bss	    dec	    hex	filename
+   1196	      4	   1772	   2972	    b9c	MATLAB.elf
+Finished building: default.size.stdout
+ 
